@@ -291,10 +291,128 @@
     color:var(--muted);
   }
 
+  /* ---------- avatar ---------- */
+  .avatar{
+    width:104px;
+    height:104px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid var(--accent);
+    display:block;
+    margin-bottom:28px;
+  }
+
+  /* ---------- work items ---------- */
+  .work-item{
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+    margin-bottom:40px;
+  }
+  .work-item:last-child{margin-bottom:0;}
+  .work-image{
+    width:100%;
+    max-height:280px;
+    object-fit:contain;
+    display:block;
+    background:var(--accent-soft);
+    border-bottom:1px solid var(--line);
+  }
+  .work-body{
+    padding:36px;
+  }
+  .work-title{
+    font-family:'Zen Kaku Gothic New', sans-serif;
+    font-weight:700;
+    font-size:22px;
+    margin-bottom:4px;
+  }
+  .work-subtitle{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    margin-bottom:20px;
+  }
+  .work-award{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.04em;
+    color:var(--accent-dark);
+    background:var(--accent-soft);
+    border:1px solid var(--line);
+    border-radius:999px;
+    padding:6px 12px;
+    margin-bottom:20px;
+  }
+  .work-meta{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:14px 24px;
+    padding:20px 0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    margin-bottom:24px;
+  }
+  .work-meta dt{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--muted);
+    margin-bottom:4px;
+  }
+  .work-meta dd{
+    font-size:14px;
+  }
+  .work-desc p{
+    font-size:15px;
+    color:var(--fg);
+    max-width:42em;
+    margin-bottom:14px;
+  }
+  .work-desc p:last-child{margin-bottom:0;}
+  .work-tools{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:24px;
+  }
+  .tool-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.02em;
+    padding:5px 12px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--muted);
+  }
+  .work-link{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    margin-top:28px;
+    font-size:14px;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--accent-dark);
+    border-bottom:1px solid var(--accent-dark);
+    padding-bottom:2px;
+  }
+  .work-link .arrow{
+    transition:transform .2s ease;
+  }
+  .work-link:hover .arrow, .work-link:focus-visible .arrow{
+    transform:translateX(4px);
+  }
+
   @media (max-width:600px){
     nav ul{gap:16px;}
     .hero{padding:64px 0 56px;}
     section{padding:56px 0;}
+    .work-body{padding:24px;}
   }
 </style>
 </head>
@@ -316,6 +434,7 @@
 <main>
   <section class="hero wrap">
     <div class="waveform" aria-hidden="true" id="heroWave"></div>
+    <img class="avatar" src="dororon_icon.jpg" alt="石川聖健のアイコン">
     <div class="eyebrow">STUDENT / GAME CREATOR</div>
     <h1>
       石川 聖健
@@ -327,7 +446,7 @@
       <span class="role-tag">サウンドデザイナー</span>
       <span class="role-tag">サウンドプログラマー</span>
     </div>
-    <p class="tagline">音について勉強中。</p>
+    <p class="tagline">人を笑顔にするコンテンツの作り手を目指し、サウンド面から勉強しています。</p>
   </section>
 
   <section id="about" class="wrap">
@@ -342,10 +461,88 @@
   <section id="works" class="wrap">
     <div class="track-label">TRACK 01 — WORKS</div>
     <h2>作品</h2>
-    <div class="works-card">
-      <div class="status"><span class="rec-dot" aria-hidden="true"></span>REC — NOW PRODUCING</div>
-      <p class="title">ただいま準備中です</p>
-      <p>公開できる作品が整い次第、順次こちらに掲載していきます。しばらくお待ちください。</p>
+
+    <div class="work-item">
+      <img class="work-image" src="Hayatubasa_logo.png" alt="『ハヤツバサ』ロゴ">
+      <div class="work-body">
+        <p class="work-title">『ハヤツバサ』</p>
+        <p class="work-subtitle">サウンドデザイン / サウンドプログラミング</p>
+        <div class="work-award">ゲームクリエイター甲子園2025 総合賞佳作・NTTドコモ賞・中林寿文賞 受賞</div>
+
+        <dl class="work-meta">
+          <div>
+            <dt>担当</dt>
+            <dd>サウンドデザイン / サウンドプログラミング</dd>
+          </div>
+          <div>
+            <dt>開発人数</dt>
+            <dd>11人(うちサウンド2名)</dd>
+          </div>
+          <div>
+            <dt>開発期間</dt>
+            <dd>2024年11月〜2025年10月</dd>
+          </div>
+        </dl>
+
+        <div class="work-desc">
+          <p>腕を振って空を飛ぶVRフライトアクションゲーム「ハヤツバサ」です。効果音全般の設計・制作及び、サウンドミドルウェアを用いた効果音とボイスの実装を担当しました。</p>
+          <p>HMDでプレイするゲームであることに加え、独自の操作体系を持っていたため、動きと音の間に違和感が生まれていないかをチームメンバーと話ながら制作を進めました。</p>
+          <p>また、HMDで文字を読ませる負担を考慮し、ボイスを用いたチュートリアルを2か国語で製作・実装しました。</p>
+        </div>
+
+        <div class="work-tools">
+          <span class="tool-tag">Unreal Engine</span>
+          <span class="tool-tag">CRI ADX</span>
+          <span class="tool-tag">GitHub</span>
+          <span class="tool-tag">Studio One</span>
+          <span class="tool-tag">Pro Tools</span>
+          <span class="tool-tag">REAPER</span>
+        </div>
+
+        <a class="work-link" href="https://gameparade.creators-guild.com/works/legacy-2120/" target="_blank" rel="noopener noreferrer">
+          作品ページを見る <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="work-item">
+      <img class="work-image" src="Masukue_logo.png" alt="『マス喰え!猫かぶり!!』ロゴ">
+      <div class="work-body">
+        <p class="work-title">『マス喰え!猫かぶり!!』</p>
+        <p class="work-subtitle">サウンドデザイン / 作曲 / ステージ実装</p>
+
+        <dl class="work-meta">
+          <div>
+            <dt>担当</dt>
+            <dd>サウンドデザイン、作曲、ステージ実装</dd>
+          </div>
+          <div>
+            <dt>開発人数</dt>
+            <dd>6人</dd>
+          </div>
+          <div>
+            <dt>開発期間</dt>
+            <dd>GGJ2026(2026年2月6日〜8日)</dd>
+          </div>
+        </dl>
+
+        <div class="work-desc">
+          <p>引っ張り&飛びつきアクションで、黄金の鱒を目指す2Dアクションゲームです。サウンド全般の制作と一部ステージの実装を担当しました。</p>
+          <p>GGJ2026(グローバルゲームジャム2026)にて48時間で製作した作品で、初対面のメンバーと共に、しっかりアソビごたえのあるゲームを意識して作り上げました。</p>
+          <p>サウンドの制作はすべて期間中に行い、一部のサウンドには開発会場で収録した音も含まれています。時間が少ない中で、音を付けるべきポイント毎に優先度を考え、ゲームメカニクスとして重要な場所が音で埋まっている状態を目指しました。</p>
+        </div>
+
+        <div class="work-tools">
+          <span class="tool-tag">Unity</span>
+          <span class="tool-tag">GitHub</span>
+          <span class="tool-tag">GameSynth</span>
+          <span class="tool-tag">REAPER</span>
+        </div>
+
+        <a class="work-link" href="https://globalgamejam.org/games/2026/karageken-2" target="_blank" rel="noopener noreferrer">
+          作品ページを見る <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
   </section>
 
